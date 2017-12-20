@@ -1,0 +1,25 @@
+Le jeu
+------------------------------
+Il s'agit du jeu du labyrinthe dont le but est que notre robot (représente par '@') récupère le trésor
+(représenté par le symbole '$'). Mais ce labyrinthe contient également des obstacle ('0'). Il faut donc que notre
+robot trouve le bon chemin pour récupérer ce trésor.
+
+Comment jouer?
+------------------------------
+Le jeu propose dans un premier temps de choisir un pseudo, si celui ci est déjà présent dans le fichier utilisateur, alors
+on récupérera les informations relative à ce pseudo. Puis on choisie un niveau de difficulté (enfant, facile, moyen, difficile
+ou enfer). Notre robot peut se déplacer selon 4 directions : Nord ('n'), sud ('s'), est ('e') ou ouest ('o').Il
+choisi également le nombre de case qu'il souhaiterais parcourir dans la direction choisie. Le robot peut également
+sauvegarder sa position ('q') pour reprendre le jeu plus tard.
+
+Fichier de sauvegarde
+------------------------------
+Le fichier de sauvegarde (un dictionnaire) est structuré de cette façon :
+{
+    user_1 : { level : {'position' : (2,2), 'is_finish' : False}},
+    user_1 : { level : {'position' : (6,5), 'is_finish' : True}},
+    user_2 : { level : {'position' : (2,2), 'is_finish' : False}},
+    ....
+}
+Où 'user_1' et 'user-2' correspond au pseudo choisi par le joueur, 'level' correspond au niveau choisi, 'position' la position
+du joueur (representé par (ligne, colonne) et si le niveau est fini ou non ('is_finish : True' si le niveau est fini, False sinon).
